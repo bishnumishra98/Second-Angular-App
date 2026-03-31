@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-data-binding',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './data-binding.html',
   styleUrl: './data-binding.css',
 })
@@ -10,6 +11,9 @@ export class DataBinding {
   courseName: string = "Angular Data Binding";
   currentDate: Date = new Date();
   rollNo: number = 101;
+
+  minTestLength: number = 5;
+  spanClass: string = "secondary";   // this variable will be used to bind a CSS class to an HTML element
 
   displayCourseInfo() {
     console.log(`Course Name: ${this.courseName}`);
@@ -30,5 +34,9 @@ export class DataBinding {
 
     // Accessing a method
     this.displayCourseInfo();
+  }
+
+  displayAlert() {
+    alert("Alert displayed!");
   }
 }
