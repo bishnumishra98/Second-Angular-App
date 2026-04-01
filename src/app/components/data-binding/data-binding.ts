@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+// FormsModule is imported to use features like ngModel for two-way data binding in the template of this component
 
 @Component({
   selector: 'app-data-binding',
