@@ -15,4 +15,6 @@ export class ControlFlow {
   changeStatus(value: boolean) {
     this.isStudentActive.set(value);
   }
+
+  cityList = ["Pune", "Bombay", "Calcutta", "Delhi", "Bangalore"];
 }

@@ -33,3 +33,14 @@
         <button class="btn btn-warning mx-2" (click)="changeStatus(false)">Make Inactive</button>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-3">
+        <ul>
+            <!-- index starts from 0 -->
+            @for (item of cityList; track $index) {
+                <li>{{ $index + 1 }} : {{ item }}</li>
+            }
+        </ul>
+    </div>
+</div>
