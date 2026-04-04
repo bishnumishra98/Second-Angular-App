@@ -1,0 +1,26 @@
+<!-- To give a dynamic class to an HTML element based on a condition, we can use the `ngClass` directive in Angular.
+     The `ngClass` directive allows us to conditionally apply one or more CSS classes to an element
+     based on the evaluation of an expression. To use ngClass, we need to first import it in .ts file. -->
+
+<div class="row">
+    <div class="col-4">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of studentList; track $index) {
+                    <tr>
+                        <td [ngClass]="item.status === true ? 'bg-success' : 'bg-danger'">{{ item.name }}</td>
+                        <td>{{ item.city }}</td>
+                        <td>{{ item.status }}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
