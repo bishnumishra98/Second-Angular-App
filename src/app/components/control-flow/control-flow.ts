@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-// import { NgClass } from "../../../../node_modules/@angular/common/types/_common_module-chunk";
 
 @Component({
   selector: 'app-control-flow',
@@ -10,4 +9,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class ControlFlow {
   selectedCast: string = "";
+
+  isStudentActive =  signal<boolean>(true);
+
+  changeStatus(value: boolean) {
+    this.isStudentActive.set(value);
+  }
 }
