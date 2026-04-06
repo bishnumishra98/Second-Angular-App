@@ -1,0 +1,46 @@
+<p>control-flow works!</p>
+
+<div class="row">
+    <div class="col-3">
+        <select [(ngModel)]="selectedCast" class="form-select">
+            <option>ABC Cast</option>
+            <option>DEF Cast</option>
+            <option>GHI Cast</option>
+            <option>Other Cast</option>
+        </select>
+    </div>
+
+    <!-- We want to show this input field, only when "Other Cast" is selected from the above dropdown.
+         For this, we can add a condition to render this div -->
+    <div class="col-3">
+        @if (selectedCast === 'Other Cast') {
+            <input type="text" class="form-control" placeholder="Other Cast">
+        }
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-4">
+            @if (isStudentActive() === true) {
+                <p>Student is active</p>
+            } @else {
+                <p>Student is not active</p>
+            }
+        </div>
+    </div>
+
+    <div class="col-5">
+        <button class="btn btn-success" (click)="changeStatus(true)">Make Active</button>
+        <button class="btn btn-warning mx-2" (click)="changeStatus(false)">Make Inactive</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <ul>
+            <!-- index starts from 0 -->
+            @for (item of cityList; track $index) {
+                <li>{{ $index + 1 }} : {{ item }}</li>
+            }
+        </ul>
+    </div>
+</div>

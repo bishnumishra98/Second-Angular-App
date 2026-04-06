@@ -1,0 +1,65 @@
+<p>data-binding works!</p>
+<!-- Data binding is a powerful feature in Angular that allows you to bind data from the component class to
+the template and vice versa. There are different types of data binding in Angular, including interpolation,
+property binding, and event binding. -->
+
+<table style="width: 100%; border: 2px solid black;">
+    <tr>
+        <td>
+            <!-- {{}} is called interpolation. It is used to display the value of a variable in the template. -->
+            <!-- You cannot use interpolation to access variables of other components. -->
+            <span>{{ courseName }}</span>
+        </td>
+        <td>
+            <p>Interpolation</p>
+            <input type="text" value="{{rollNo}}">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!-- Interpolation can also be used to call a method and display its return value. -->
+            <p>Method Call from Interpolation</p>
+            <span>{{ displayCourseInfoForUI() }}</span>
+        </td>
+    </tr>
+    <tr>
+        <!-- Property binding or attribute binding is used to bind the value of a variable
+             to an HTML element's property. -->
+        <!-- In property binding, we use square brackets around the property or attribute name. -->
+        <td>
+            <p>Property Binding</p>
+            <input type="text" [value]="rollNo" />
+        </td>
+        <td>
+            <input type="text" [minLength]="minTestLength" placeholder="Min length of input text is 5">
+        </td>        
+    </tr>
+    <tr>
+        <td>
+            <!-- In Property Binding, we can also bind a CSS class to an HTML element using property binding. -->
+            <span [class]="spanClass">This is a span element with a CSS class.</span>
+        </td>
+    </tr>
+    <tr>
+        <!-- Event binding is used to bind an event to a method in the component class. -->
+        <!-- In event binding, we use parentheses around the event name. -->
+        <!-- click is a DOM event. It is triggered when the user clicks on the button. -->
+        <!-- displayAlert() is the handler function in the component class that will be called
+             when the click event is triggered. -->
+        <td>
+            <button (click)="displayAlert()">Display Alert button</button>
+        </td>
+    </tr>
+    <tr>
+        <!-- Two-way data binding is a combination of property binding and event binding. -->
+        <!-- It allows you to bind a variable to an input element and update the variable when the user types
+             in the input. -->
+        <!-- In Angular, we can use the ngModel directive for two-way data binding. -->
+        <!-- To use ngModel, you first need to import the FormsModule in your .ts file of the component. -->
+        <!-- ngModel works only on form elements like input, select, textarea, etc. -->
+        <td>
+            <p>Two-Way Data Binding for Roll Number</p>
+            <input type="text" [(ngModel)]="rollNo" />
+        </td>
+    </tr>
+</table>

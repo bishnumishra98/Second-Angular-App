@@ -1,0 +1,46 @@
+<!-- To give a dynamic class to an HTML element based on a condition, we can use the `ngClass` directive in Angular.
+     The `ngClass` directive allows us to conditionally apply one or more CSS classes to an element
+     based on the evaluation of an expression. To use ngClass, we need to first import it in .ts file. -->
+
+<div class="row">
+    <!-- Applying dynamic class to an element based on a condition -->
+    <div class="col-4">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of studentList; track $index) {
+                    <tr>
+                        <td [ngClass]="item.status === true ? 'bg-success' : 'bg-danger'">{{ item.name }}</td>
+                        <td>{{ item.city }}</td>
+                        <td>{{ item.status }}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Applying dynamic class to an element based on a variable -->
+    <div class="col-5" [ngClass]="themeClass">
+        <h3>Hello, World!</h3>
+    </div>
+
+    <hr>
+
+    <!-- Applying dynamic class to an element based on an object -->
+    <div class="col-3" [ngStyle]="customCSS">
+        <h4>Custom Styled Div</h4>
+    </div>
+</div>
+
+<!-- Feature 	     ngClass	                           ngStyle
+    --------------------------------------------------------------------------------------------------------------------
+     Primary Role	 Adds/removes CSS classes.	           Sets inline CSS styles.
+     Input Types     String, Array, or Object.	           Object only.
+     Best Use Case   Toggling predefined sets of styles.   Applying unique, calculated values (e.g., specific colors).
+     Maintenance     Higher; logic stays in CSS files.	   Lower; styles are defined in the template.                -->
