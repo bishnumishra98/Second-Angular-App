@@ -1,3 +1,33 @@
-import { Routes } from '@angular/router';
+// This file defines the routes for the Angular application. It imports the necessary components and
+// sets up the routing configuration. The routes array contains objects that define the path and the
+// corresponding component to be rendered when the user navigates to that path.
 
-export const routes: Routes = [];
+import { Routes } from '@angular/router';   // import the Routes type from @angular/router
+import { ControlFlow } from './components/control-flow/control-flow';
+import { DataBinding } from './components/data-binding/data-binding';
+import { Signal } from './components/signal/signal';
+import { Attribute } from './components/attribute/attribute';
+
+export const routes: Routes = [
+    {
+        path: '',
+        redirectTo: 'controlflow',
+        pathMatch: 'full'
+    },
+    {
+        path: 'controlflow',
+        component: ControlFlow
+    },
+    {
+        path: 'data-binding',
+        component: DataBinding
+    },
+    {
+        path: 'signal',
+        component: Signal
+    },
+    {
+        path: 'attribute',
+        component: Attribute
+    }
+];
