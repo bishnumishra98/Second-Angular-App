@@ -29,5 +29,13 @@ export const routes: Routes = [
     {
         path: 'attribute',
         component: Attribute
+    },
+    {
+        // Wildcard route. If user navigates to a path that doesn't match any of the above routes,
+        // it will be redirected to this component.
+        // Ideally, you should make a NotFound component and redirect to that instead of redirecting
+        // to an existing component.
+        path: '**',
+        redirectTo: 'controlflow'
     }
 ];
