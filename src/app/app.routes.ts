@@ -7,6 +7,7 @@ import { ControlFlow } from './components/control-flow/control-flow';
 import { DataBinding } from './components/data-binding/data-binding';
 import { Signal } from './components/signal/signal';
 import { Attribute } from './components/attribute/attribute';
+import { Photos } from './components/photos/photos';
 
 export const routes: Routes = [
     {
@@ -29,6 +30,10 @@ export const routes: Routes = [
     {
         path: 'attribute',
         component: Attribute
+    },
+    {
+        path: 'photos',
+        component: Photos
     },
     {
         // Wildcard route. If user navigates to a path that doesn't match any of the above routes,
