@@ -8,14 +8,14 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './photos.css',
 })
 export class Photos {
+  photosList: any[] = [];
+
   // Older method(Dependency Injection): It was used before Angular 16.
   // constructor(private http: HttpClient) {
   // }
 
   // Introduced from Angular 16, it is a new way to inject dependencies without using constructor.
   http = inject(HttpClient);
-
-  photosList: any[] = [];
 
   ngOnInit(): void {
     this.getAllPhotos();   // call the method to fetch photos when the component initializes
@@ -29,6 +29,5 @@ export class Photos {
       this.photosList = response;   // assign the response data to the photosList property
     });
   }
-
   
 }
