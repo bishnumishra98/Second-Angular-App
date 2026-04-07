@@ -15,12 +15,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        @for (item of photosList; track $index) {
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ item.title }}</td>
+                                <td>{{ item.url }}</td>
+                                <td><img [src]="item.thumbnailUrl" [alt]="item.title" class="img-fluid"></td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
