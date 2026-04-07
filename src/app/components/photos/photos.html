@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-7">
+    <div class="col-8">
         <div class="card">
             <div class="card-header bg-warning">
                 Photos List
@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <div class="col-5">
+    <div class="col-4">
         <div class="card">
             <div class="card-header bg-warning">
                 Photos List
@@ -43,21 +43,24 @@
             <div class="card-body">
                 <form>
                     <div class="row">
+                        <!-- We are using ngModel for two-way data binding, it allows us to bind the form input fields to the component properties.
+                        When the user types in the input fields, the corresponding properties in the component will be updated automatically,
+                        and vice versa. -->
                         <div class="col-6">
                             <label>AlbumId</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="albumId" [(ngModel)]="newPhoto.albumId" class="form-control">
                         </div>
                         <div class="col-6">
                             <label>Title</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="title" [(ngModel)]="newPhoto.title" class="form-control">
                         </div>
                         <div class="col-6">
                             <label>URL</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="url" [(ngModel)]="newPhoto.url" class="form-control">
                         </div>
                         <div class="col-6">
                             <label>Thumbnail</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="thumbnailUrl" [(ngModel)]="newPhoto.thumbnailUrl" class="form-control">
                         </div>
                     </div>
                     <div class="row pt-2">

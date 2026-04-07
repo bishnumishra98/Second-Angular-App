@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-photos',
-  imports: [],
+  imports: [FormsModule],   // import FormsModule to use ngModel for two-way data binding in the template
   templateUrl: './photos.html',
   styleUrl: './photos.css',
 })
