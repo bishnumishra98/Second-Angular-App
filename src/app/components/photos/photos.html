@@ -20,8 +20,14 @@
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ item.title }}</td>
                                 <td>{{ item.url }}</td>
-                                <td><img [src]="item.thumbnailUrl" [alt]="item.title" class="img-fluid"></td>
+                                <td>{{ item.thumbnailUrl }}</td>
                             </tr>
+                            <!-- <tr>
+                                <td>1</td>
+                                <td>testTitle</td>
+                                <td>testURL</td>
+                                <td>testThumbnail</td>
+                            </tr> -->
                         }
                     </tbody>
                 </table>

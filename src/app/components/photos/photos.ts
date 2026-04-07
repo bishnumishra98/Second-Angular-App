@@ -21,6 +21,16 @@ export class Photos {
     this.getAllPhotos();   // call the method to fetch photos when the component initializes
   }
 
+  newPhoto: any = {
+    "albumId": 0,
+    "id": 0,
+    "title": "",
+    "url": "",
+    "thumbnailUrl": ""
+  }
+
+  
+
   getAllPhotos() {
     // Make an HTTP GET request to the specified URL and subscribe to the response.
     // subscribe() is used to handle the asynchronous response from the HTTP request.
@@ -29,5 +39,4 @@ export class Photos {
       this.photosList = response;   // assign the response data to the photosList property
     });
   }
-  
 }
