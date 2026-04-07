@@ -49,4 +49,8 @@ export class Photos {
       this.getAllPhotos();   // refresh the photos list after saving a new photo
     });
   }
+
+  onEdit(data: any) {
+    this.newPhoto = { ...data };
+  }
 }
