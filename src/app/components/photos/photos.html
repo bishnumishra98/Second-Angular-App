@@ -24,7 +24,7 @@
                                 <td>{{ item.thumbnailUrl }}</td>
                                 <td>
                                     <button class="btn btn-sm btn-success" (click)="onEdit(item)">Edit</button>
-                                    <button class="btn btn-sm btn-danger">Delete</button>
+                                    <button class="btn btn-sm btn-danger" (click)="onDeletePhoto(item.id)">Delete</button>
                                 </td>
                             </tr>
                             <!-- <tr>
@@ -73,7 +73,11 @@
                             <button class="btn btn-secondary">Reset</button>
                         </div>
                         <div class="col-6 text-center">
-                            <button type="button" class="btn btn-success" (click)="onSavePhoto()">Save</button>
+                            @if (newPhoto.id == 0) {
+                                 <button type="button" class="btn btn-success" (click)="onSavePhoto()">Save</button>
+                            } @else {
+                                 <button type="button" class="btn btn-primary" (click)="onUpdatePhoto()">Update</button>
+                            }
                         </div>
                     </div>
                 </form>

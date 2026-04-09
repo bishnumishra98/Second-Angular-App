@@ -50,7 +50,24 @@ export class Photos {
     });
   }
 
+  // PUT method to update an existing photo in the API endpoint
+  onUpdatePhoto() {
+    // Make an HTTP PUT request to the specified URL with the newPhoto data and subscribe to the response.
+    this.http.put(`https://jsonplaceholder.typicode.com/photos/${this.newPhoto.id}`, this.newPhoto).subscribe((response: any) => {
+      console.log("Photo updated successfully:", response);   // log the response to the console
+      this.getAllPhotos();   // refresh the photos list after updating the photo
+    });
+  }
+
   onEdit(data: any) {
     this.newPhoto = { ...data };
+  }
+
+  onDeletePhoto(id: number) {
+    // Make an HTTP DELETE request to the specified URL with the photo ID and subscribe to the response.
+    this.http.delete(`https://jsonplaceholder.typicode.com/photos/${id}`).subscribe((response: any) => {
+      console.log("Photo deleted successfully:", response);   // log the response to the console
+      this.getAllPhotos();   // refresh the photos list after deleting the photo
+    });
   }
 }
